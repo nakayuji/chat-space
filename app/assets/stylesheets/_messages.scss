@@ -26,7 +26,7 @@
       font-weight: bold;
       font-size: 16px;
      &__user-name{  
-      
+
      }
     &__menu{
       display: flex;
@@ -56,7 +56,7 @@
           font-size: 11px;
         }
       }
-    
+
     }
 }
 
@@ -97,7 +97,7 @@
     }
   }
   .massages{
-    height: calc(100vh - 190px);
+    height: calc(100vh - 171px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
@@ -123,14 +123,14 @@
         font-size: 14px;
         margin-bottom: 10px; 
        }
-      
+
     }
   }
 
   .form{
-    height: 90px;
+    height: 50px;
     padding: 20px 40px;
-    width:100%;
+    // width:100%;
     background-color: #ddd;
 
     .new-messge{
@@ -140,14 +140,14 @@
     position: relative;
 
     }
-    
+
     .input-box{
       display:flex;
-      
+
       &__text{
         position: relative;
         // display:inline-block;
-        
+
         input{
           width: calc(100vw - 520px);
           height: 50px;
@@ -155,11 +155,13 @@
           color: #434a54;
           border-style: none;
         }
-        
+
          label{
            position: absolute;
            top:16px;
            right:16px;
+
+           
          }
       }
 
@@ -167,9 +169,8 @@
         background:#38aef0;
         color:white;
         margin-left:15px;
-        padding:14px 40px;
+        padding:14px 30px;
       }
     } 
   }
 }
-

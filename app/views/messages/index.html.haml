@@ -8,9 +8,13 @@
         test-user
       .side-bar__header__box__menu
         .side-bar__header__box__menu__new-group
-        <i class="fa fa-edit "></i>
+        %label.icon{for: "icon"}
+          %i.fa.fa-edit.fa-lg
+        -# <i class="fa fa-edit "></i>
         .side-bar__header__box__menu__edit-user
-        <i class="fa fa-cog "></i>
+        %label.icon{for: "icon"}
+          %i.fa.fa-cog.fa-lg
+        -# <i class="fa fa-cog "></i>
   .groups
     .groups__messages
       .group
@@ -36,7 +40,7 @@
       .main-header__left-box__member-list
         Menber:user
       .main-header__left-box__member-list__menber
-    
+
     .main-header__edit-btn
       Edit
   .massages
@@ -64,8 +68,3 @@
           %i.fa.fa-image.fa-lg
       .submit-btn
         Send
-
-
- 
-   
- 
