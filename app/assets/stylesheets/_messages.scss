@@ -130,7 +130,6 @@
   .form{
     height: 50px;
     padding: 20px 40px;
-    // width:100%;
     background-color: #ddd;
 
     .new-messge{
@@ -146,7 +145,6 @@
 
       &__text{
         position: relative;
-        // display:inline-block;
 
         input{
           width: calc(100vw - 520px);
