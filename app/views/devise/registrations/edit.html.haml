@@ -1,0 +1,13 @@
+%h2
+  Edit&#xA0;#{ resource_name.to_s.humanize }
+=  form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| 
+\&#xA0;&#xA0;#{ render "devise/shared/error_messages", resource: resource }
+
+\&#xA0;&#xA0;
+%div>
+\&#xA0;class="field"&gt;
+\&#xA0;&#xA0;&#xA0;&#xA0;#{ f.label :email }
+= succeed "\u00A0/>" do
+  %br/
+=  f.email_field :email, autofocus: true, autocomplete: email 
+\&#xA0;&#xA0;
