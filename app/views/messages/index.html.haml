@@ -1,0 +1,68 @@
+.header
+  .header__logo
+  グループを作成しました    
+.side-bar
+  .side-bar__header
+    .side-bar__header__box
+      .side-bar__header__box__user-name
+        test-user
+      .side-bar__header__box__menu
+        .side-bar__header__box__menu__new-group
+        %label.icon{for: "icon"}
+          %i.fa.fa-edit.fa-lg
+        .side-bar__header__box__menu__edit-user
+        %label.icon{for: "icon"}
+          %i.fa.fa-cog.fa-lg
+  .groups
+    .groups__messages
+      .group
+        .group__group-name
+          test group
+        .group__latest-massege
+          さようなら
+      .group
+        .group__group-name
+          sample-group
+        .group__latest-massege
+          hello!
+      .group
+        .group__group-name
+          example
+        .group__latest-massege
+          まだメッセージがありません
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group
+        test-group
+      .main-header__left-box__member-list
+        Menber:user
+      .main-header__left-box__member-list__menber
+
+    .main-header__edit-btn
+      Edit
+  .massages
+    .massege
+      .massege__upper-info
+        .massege__upper-info__talker
+          text-user
+        .massege__upper-info__date
+          2019/09/09/20/32
+      .massege__text
+        こんにちは！
+    .massege
+      .massege__upper-info
+        .massege__upper-info__talker
+          test-user
+        .massege__upper-info__date
+          2019/09/10/13/03
+      .massege__text
+        さようなら
+  .form
+    .input-box
+      .input-box__text
+        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %label.icon{for: "icon"}
+          %i.fa.fa-image.fa-lg
+      .submit-btn
+        Send
