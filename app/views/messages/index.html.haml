@@ -28,17 +28,17 @@
 -#         -# = link_to '#' do
 -#         .group__group-name
 -#           -# = group.name
--#         .group__latest-massege
+-#         .group__latest-message
 -#           -# メッセージはまだありません。
 -#       .group
 -#         .group__group-name
 -#           sample-group
--#         .group__latest-massege
+-#         .group__latest-message
 -#           hello!
 -#       .group
 -#         .group__group-name
 -#           example
--#         .group__latest-massege
+-#         .group__latest-message
 -#           まだメッセージがありません
 .chat-main
   .main-header
@@ -51,28 +51,28 @@
 
     .main-header__edit-btn
       Edit
-  .massages
-    .massege
-      .massege__upper-info
-        .massege__upper-info__talker
-          text-user
-        .massege__upper-info__date
-          2019/09/09/20/32
-      .massege__text
-        こんにちは！
-    .massege
-      .massege__upper-info
-        .massege__upper-info__talker
-          test-user
-        .massege__upper-info__date
-          2019/09/10/13/03
-      .massege__text
-        さようなら
-  .form
-    .input-box
-      .input-box__text
-        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-        %label.icon{for: "icon"}
-          %i.fa.fa-image.fa-lg
-      .submit-btn
-        Send
+  .messages
+  
+    .message
+      - @messages.each do |message|
+        .message__upper-info
+          .message__upper-info__talker
+            = message.user.name
+          .message__upper-info__date
+            = message.created_at.strftime("%Y/%m/%d %H:%M")
+        .message__text
+          - if message.content.present?
+            %p.lower-message__content
+              = message.content
+          = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+        
+    
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+  
