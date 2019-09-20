@@ -25,6 +25,9 @@
       width: 100%;
       font-weight: bold;
       font-size: 16px;
+      .icon {
+        color: white;
+      }
      &__user-name{  
 
      }
@@ -32,6 +35,7 @@
       display: flex;
       &__new-group{
         margin-left: 0.3rem;
+        
       }
       &__edit-user{
         margin-left: 0.3rem;
@@ -54,6 +58,7 @@
         }
         &__latest-{
           font-size: 11px;
+          color: white;
         }
       }
 
@@ -132,6 +137,11 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
+    position: fixed;
+  top: auto;
+  left: 300px;
+  right: 0;
+  bottom: 0;
     &__message {
       border: none;
       float: left;
@@ -167,4 +177,8 @@
 .white{
   color: white;
   background-color: white;
+}
+a{
+  color:white;
+  text-decoration:none;
 }

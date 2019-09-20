@@ -1,6 +1,6 @@
 .side-bar {
   box-sizing: border-box;
-  color: $white;
+  color: white;
   width: 300px;
   .header {
     background-color: $side_blue_dark;
@@ -11,15 +11,19 @@
       display: inline-block;
       font-size: $side_header_font;
       font-weight: bold;
+      color: white;
     }
     &__lists {
       display: inline-block;
       float: right;
+      color: white;
       .list {
         display: inline-block;
+        color: white;
+        
       }
       .icon {
-        color: $white;
+        color: white;
         font-size: $side_header_font;
       }
     }
@@ -33,11 +37,11 @@
       box-sizing: border-box;
       padding: 20px 0 40px;
       &__name {
-        color: $white;
+        color: white;
         font-size: $side_group_name;
       }
       &__message {
-        color: $white;
+        color: white;
         font-size: $side_group_message;
         margin-top: 5px;
       }
