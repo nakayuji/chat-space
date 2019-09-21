@@ -32,7 +32,6 @@ $(function(){
           var html = buildHTML(message);
           $('.message').append(html);
           $('#new_message')[0].reset();
-          // $('#message_content').val('');
           $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
         })
         .fail(function(){
