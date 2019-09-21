@@ -31,7 +31,8 @@ $(function(){
         .done(function(message){
           var html = buildHTML(message);
           $('.message').append(html);
-          $('#message_content').val('');
+          $('#new_message')[0].reset();
+          // $('#message_content').val('');
           $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
         })
         .fail(function(){
@@ -40,4 +41,3 @@ $(function(){
        return false;
       })
     });
-    
