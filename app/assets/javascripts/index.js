@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() { 
-
+// $(function() {
   var search_list = $("#user-search-result");
 
 
@@ -76,5 +76,8 @@ $(document).on('turbolinks:load', function() {
     $('.chat-group-user').on('click', '.user-search-remove', function() {
       $(this).parent().remove();
       
+    })
+    $('.chat-group-form__field--right__menber').on('click', '.user-search-remove', function() {
+      $(this).parent().remove();
     })
 });
