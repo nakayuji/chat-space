@@ -1,0 +1,5 @@
+= form_tag('/users/index', method: :get) do
+
+  %input.index__query{name: "keyword", placeholder: "作品名で検索", type: "text", value: ""}/
+  %button.btn-search{title: "検索", type: "submit"}
+    %i.icon-search
