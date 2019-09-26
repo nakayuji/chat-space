@@ -63,3 +63,6 @@ gem 'rails-controller-testing'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'jquery-turbolinks'
+group :production do
+  gem 'unicorn', '5.4.1'
+end
