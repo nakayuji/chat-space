@@ -15,11 +15,10 @@
       = link_to "Edit", edit_group_path(params[:group_id]), method: :get
       
   .messages
-  
     .message
       - @messages.each do |message|
         .message__upper-info
-          .message__upper-info__talker
+          .message__upper-info__talker{"data-message-id": "#{message.id}"}
             = message.user.name
           .message__upper-info__date
             = message.created_at.strftime("%Y/%m/%d %H:%M")
