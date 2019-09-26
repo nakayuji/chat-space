@@ -49,7 +49,6 @@ $(document).on('turbolinks:load', function() {
           data: {id: last_message_id}
         })
         .done(function(messages) {
-          console.log(last_message_id)
           var insertHTML = '';
           messages.forEach(function (message) {
             insertHTML = buildHTML(message); 
@@ -59,7 +58,7 @@ $(document).on('turbolinks:load', function() {
           
         })
         .fail(function() {
-          console.log('error');
+          alert('自動更新に失敗しました');
         });
       };
       $(function() {
