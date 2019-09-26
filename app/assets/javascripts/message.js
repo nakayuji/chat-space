@@ -1,7 +1,7 @@
-$(function(){
+$(document).on('turbolinks:load', function() { 
   function buildHTML(message){
       var html = `<div class="message__upper-info">
-                  <div class="message__upper-info__talker">
+                  <div class="message__upper-info__talker" data-message-id="${message.id}">
                   ${message.user_id}
                   </div>
                   <div class="message__upper-info__date">
@@ -39,5 +39,31 @@ $(function(){
        })
        return false;
       })
+      var reloadMessages = function() {
+        last_message_id = $('.message__upper-info__talker:last').data('message-id')
+        
+        $.ajax({
+          url: './api/messages',
+          type: 'get',
+          dataType: 'json',
+          data: {id: last_message_id}
+        })
+        .done(function(messages) {
+          console.log(last_message_id)
+          var insertHTML = '';
+          messages.forEach(function (message) {
+            insertHTML = buildHTML(message); 
+            $('.messages').append(insertHTML);
+            $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+          })
+          
+        })
+        .fail(function() {
+          console.log('error');
+        });
+      };
+      $(function() {
+          setInterval(reloadMessages, 5000);
+        });  
     });
     
