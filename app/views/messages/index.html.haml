@@ -6,14 +6,15 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__current-group
-      = @group.name
-      .main-header__left-box__member-list
-     
-      .main-header__left-box__member-list__menber
-      
+        = @group.name
+      .memberlist
+        .main-header__left-box__member-list
+          Member :
+        .main-header__left-box__member-list__member
+          - @group.users.each do |user|
+            = user.name
     .main-header__edit-btn 
-      = link_to "Edit", edit_group_path(params[:group_id]), method: :get
-      
+      = link_to 'Edit', edit_group_path(params[:group_id]), method: :get
   .messages
     .message
       - @messages.each do |message|
