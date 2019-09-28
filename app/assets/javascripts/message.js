@@ -30,16 +30,19 @@ $(document).on('turbolinks:load', function() {
         })
         .done(function(message){
           var html = buildHTML(message);
-          $('.message').append(html);
+          $('.messages').append(html);
           $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-          $('#new_message')[0].reset();
-          $('.form__mask')[0].reset();
+          $('form')[0].reset();
         })
         .fail(function(){
           alert('error');
        })
-       return false;
-      })
+        .always(function(data){
+            $('.form__submit').prop('disabled', false);
+        })
+        
+      //  return false;
+      });
       var reloadMessages = function() {
         if (window.location.href.match(/\/groups\/\d+\/messages/)){ 
         last_message_id = $('.message__upper-info__talker:last').data('message-id')
