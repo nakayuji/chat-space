@@ -25,10 +25,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  private
-  def group_params
-    params.require(:group).permit(:name, { :user_ids => [] })
-  end
 
   private
 
